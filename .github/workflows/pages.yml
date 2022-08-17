@@ -32,7 +32,7 @@ jobs:
         run: |
             sudo apt-get update
             sudo apt-get install -y --no-install-recommends build-essential
-            sudo apt-get install -y texlive-xetex unzip wget
+            sudo apt-get install -y texlive-xetex unzip wget git
             sudo apt-get install -y python3 python3-pip
             pip3 install -U pip setuptools
             pip3 install sphinx sphinx-autobuild sphinx_rtd_theme rst2pdf
