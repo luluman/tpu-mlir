@@ -44,6 +44,7 @@ jobs:
         uses: actions/configure-pages@v1
       - name: Build Document
         run: |
+            git fetch --prune --unshallow
             cd ./doc/developer_manual
             make html
       - name: Upload artifact
