@@ -1,8 +1,8 @@
 # check the pull-request document
-name: check Pages
+name: Check Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pull-request targeting the default branch
   pull_request:
     branches: ["master"]
     paths:
