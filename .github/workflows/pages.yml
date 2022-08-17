@@ -40,8 +40,6 @@ jobs:
             sudo unzip /usr/share/fonts/fandol.zip -d /usr/share/fonts
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-            fetch-depth: 1
       - name: Setup Pages
         uses: actions/configure-pages@v1
       - name: Build Document
