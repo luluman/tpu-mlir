@@ -40,13 +40,15 @@ jobs:
             sudo unzip /usr/share/fonts/fandol.zip -d /usr/share/fonts
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+            fetch-depth: 0
       - name: Setup Pages
         uses: actions/configure-pages@v1
       - name: Build Document
         run: |
-            git fetch --prune --unshallow
-            cd ./doc/developer_manual
+            pushd ./doc/developer_manual
             make html
+            popd
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
