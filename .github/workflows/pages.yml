@@ -30,15 +30,17 @@ jobs:
     steps:
       - name: Setup
         run: |
-            apt-get update && apt-transport-https ca-certificates
-            apt-get install -y texlive-xetex unzip wget
-            apt-get install -y python3 python3-pip
+            sudo apt-get update && apt-transport-https ca-certificates
+            sudo apt-get install -y texlive-xetex unzip wget
+            sudo apt-get install -y python3 python3-pip
             pip3 install -U pip setuptools
             pip3 install sphinx sphinx-autobuild sphinx_rtd_theme rst2pdf
-            wget "http://mirrors.ctan.org/fonts/fandol.zip" -O /usr/share/fonts/fandol.zip
-            unzip /usr/share/fonts/fandol.zip -d /usr/share/fonts
+            sudo wget "http://mirrors.ctan.org/fonts/fandol.zip" -O /usr/share/fonts/fandol.zip
+            sudo unzip /usr/share/fonts/fandol.zip -d /usr/share/fonts
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+            fetch-depth: 1
       - name: Setup Pages
         uses: actions/configure-pages@v1
       - name: Build Document
