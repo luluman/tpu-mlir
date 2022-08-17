@@ -33,6 +33,9 @@ except subprocess.TimeoutExpired as time_e:
 except subprocess.CalledProcessError as call_e:
     print(call_e.output.decode(encoding="utf-8"))
 
+if re.findall("(\d+)\.(\d+)\-(\d+)", tag_str) == []:
+    raise ValueError(tag_str)
+
 release =  ".".join(re.findall("(\d+)\.(\d+)\-(\d+)", tag_str)[0])
 
 
